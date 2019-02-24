@@ -34,6 +34,9 @@ INSTALLED_APPS = [
 
     # REST Framework
     'rest_framework',
+
+    # Our Todo app
+    'apps.todo',
 ]
 
 MIDDLEWARE = [
