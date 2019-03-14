@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
     # REST Framework
     'rest_framework',
+    'rest_framework.authtoken',
 
     # Our Todo app
     'apps.todo',
@@ -114,6 +115,13 @@ STATIC_URL = '/static/'
 # Django REST Framework settings
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+
     'PAGE_SIZE': 10,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
